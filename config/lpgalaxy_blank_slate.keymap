@@ -61,7 +61,7 @@
           };
     };
     behaviors {
-        ltap: layer_tap_left {
+        ltap: layer_tap {
           compatible = "zmk,behavior-hold-tap";
           #binding-cells = <2>;
           flavor = "balanced";
@@ -69,13 +69,21 @@
           quick-tap-ms = <0>;
           bindings = <&mo>, <&kp>
         };
+        mt: mod_tap {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          flavor = "tap-preferred";
+          tapping-term-ms = <200>;
+          quick-tap-ms = <0>;
+          bindings = <&kp>, <&kp>;
+        };
     };
     combos {
       compatible = "zmk,combos";
       combo_esc {
           timeout-ms = <50>;
           key-positions = <0 1>;
-          bindings = <&kp ESC>
+          bindings = <&kp ESC>;
         };
       combo_underscore {
           timeout-ms = <50>;
@@ -100,7 +108,6 @@
         base_layer {
             label = "Base";
             bindings = <
-#ifdef QWERTY_BASE
   //╭──────────┬──────────┬──────────┬──────────┬──────────╮                                      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
   //│  Q       │  W       │  E       │  R       │  T       │                                      │  Y       │  U       │    I     │    O     │    P
        &kp Q      &kp W      &kp E      &kp R     LA_T(T)          &kp C_VOL_UP   &kp C_NEXT        RA_T(Y)     &kp U    &kp I       &kp O      &kp P
@@ -110,11 +117,6 @@
   //├──────────┼──────────┼──────────┼──────────┼──────────┤                                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│    Z     │  X       │  C       │    V     │   B      │                                      │    N     │   M      │    , <   │ . >      │ / ?
         &kp Z    &kp X      &kp C       &kp V     LC_T(B)          &kp C_VOL_DN   &kp C_PREV        RC_T(N)       &kp M     &kp COMMA    &kp DOT    &kp FSLH
-#else
- &kp ESC    &kp Q      &kp W      &kp F       &kp P          &kp B          &kp J            &kp L          &kp U       &kp Y      &kp QUOT      &kp BKSP
- &kp TAB    &kp A      &kp R      &kp S       &kp T          &kp G          &kp M            &kp N          &kp E       &kp I      &kp O         &kp QUOT
- &kp LSHFT  &kp Z      &kp X      &kp C       &kp D          &kp V          &kp K            &kp H          &kp COMMA   &kp DOT    &kp SEMI      &kp RET
-#endif
 #ifdef TBLE_DUAL_2U
  &kp LCTRL  &kp LGUI   &kp LALT   &mo NAV_L         &ltap SFT_L SPACE               &ltap SYM_L BKSP          &mo NUM_L   &kp LALT   &kp RGUI   &kp RSHIFT
 #elif defined(TBLE_MIT)
@@ -136,7 +138,7 @@
    &bt BT_CLR  &bt BT(0)  &bt BT(1)  &bt BT(2)   &bt BT(3)         &trans       &trans              &kp BKSP  &kp LA(BKSP) &kp LBKT &kp RBKT  &kp BSLH
 //├──────────┼──────────┼──────────┼──────────┼──────────┤                                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
 #ifdef TBLE_DUAL_2U
-    &trans     &trans    &trans     &trans                   &kp LSHFT                 &trans                      &trans     &trans    &trans    &trans
+    &trans     &trans    &trans     &trans              &ltap SFT_L SPACE            &trans                   &trans     &trans    &trans    &trans
 #elif defined(TBLE_MIT)
 &trans  &trans        &trans     &trans      &trans                &trans             &trans      &trans   &trans &trans &trans
 #else
