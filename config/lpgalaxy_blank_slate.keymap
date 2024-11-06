@@ -29,6 +29,8 @@
 #define RG_T(n) &mt RGUI n
 #define LA_T(n) &mt LALT n
 #define RA_T(n) &mt RALT n
+#define LC_T(n) &mt LCTRL n
+#define RC_T(n) &mt RCTRL n
 
 
 / {
@@ -98,15 +100,15 @@
         base_layer {
             label = "Base";
             bindings = <
-  //╭──────────┬──────────┬──────────┬──────────┬──────────╮                                      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-  //│  Q       │  W       │  E       │  R       │  T       │                                      │  Y       │  U       │    I     │    O     │    P
-       &kp Q      &kp W      &kp E      &kp R     LA_T(T)          &kp C_VOL_UP   &kp C_NEXT        RA_T(Y)     &kp U    &kp I       &kp O      &kp P
-  //├──────────┼──────────┼──────────┼──────────┼──────────┤                                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-  //│  A       │  S       │  D       │  F       │  G       │                                      │  H       │  J       │  K       │  L       │    '     │
-      &kp A      &kp S      &kp D       LS_T(F)    LG_T(G)          &trans         &trans            RG_T(H)     RS_T(J)     &kp K       &kp L      &kp QUOT
-  //├──────────┼──────────┼──────────┼──────────┼──────────┤                                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-  //│    Z     │  X       │  C       │    V     │   B      │                                      │    N     │   M      │    , <   │ . >      │ / ?
-        &kp Z    &kp X      &kp C       &kp V     LC_T(B)          &kp C_VOL_DN   &kp C_PREV        RC_T(N)       &kp M     &kp COMMA    &kp DOT    &kp FSLH
+  //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────────╮  ╭──────────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+  //│  Q       │  W       │  E       │  R       │  T       │     |              |  |              |  │  Y       │  U       │    I     │    O     │    P
+       &kp Q      &kp W      &kp E      &kp R     LA_T(T)          &kp C_VOL_UP      &kp C_NEXT         RA_T(Y)     &kp U    &kp I       &kp O      &kp P
+  //├──────────┼──────────┼──────────┼──────────┼──────────┤     |              |  |              |  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+  //│  A       │  S       │  D       │  F       │  G       │     |              |  |              |  │  H       │  J       │  K       │  L       │    '     │
+      &kp A      &kp S      &kp D       LS_T(F)    LG_T(G)          &trans         &trans               RG_T(H)     RS_T(J)     &kp K       &kp L      &kp QUOT
+  //├──────────┼──────────┼──────────┼──────────┼──────────┤     |              |  |              |  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+  //│    Z     │  X       │  C       │    V     │   B      │     |              |  |              |  │    N     │   M      │    , <   │ . >      │ / ?
+        &kp Z    &kp X      &kp C       &kp V     LC_T(B)          &kp C_VOL_DN     &kp C_PREV         RC_T(N)       &kp M     &kp COMMA    &kp DOT    &kp FSLH
 #ifdef TBLE_DUAL_2U
  &kp LCTRL  &kp LGUI   &kp LALT   &mo NAV_L         &ltap SFT_L SPACE               &ltap SYM_L BKSP          &mo NUM_L   &kp LALT   &kp RGUI   &kp RSHIFT
 #elif defined(TBLE_MIT)
