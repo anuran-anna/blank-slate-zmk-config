@@ -167,7 +167,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┤                                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
    &kp F11     &kp F12    &trans      &trans     &trans              &trans     &trans            &trans     &trans       &trans       &trans     &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┤                                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-   &trans     &trans     &trans       &trans    &trans               &trans     &trans             &trans    &trans       &trans       &trans     &trans
+&rgb_ug RGB_TOG  &trans   &trans       &trans    &trans               &trans     &trans             &trans    &trans       &trans       &trans     &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┤                                      ├──────────┼──────────┼──────────┼──────────┼──────────┤
 #ifdef TBLE_DUAL_2U
    &trans      &trans      &trans     &kp RPAR                &trans                    &trans       &trans         &trans &trans &bootloader
