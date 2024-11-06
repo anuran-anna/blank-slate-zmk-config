@@ -110,7 +110,7 @@
   //│    Z     │  X       │  C       │    V     │   B      │     |              |  |              |  │    N     │   M      │    , <   │ . >      │ / ?
         &kp Z    &kp X      &kp C       &kp V     LC_T(B)          &kp C_VOL_DN     &kp C_PREV         RC_T(N)       &kp M     &kp COMMA    &kp DOT    &kp FSLH
 #ifdef TBLE_DUAL_2U
- &kp LCTRL  &kp LGUI   &kp LALT   &mo NAV_L         &ltap SFT_L SPACE               &ltap SYM_L BKSP          &mo NUM_L   &kp LALT   &kp RGUI   &kp RSHIFT
+ &kp LCTRL  &kp LGUI   &kp LALT   &caps_word        &ltap SFT_L SPACE               &ltap NUM_L BKSP          &mo FUN_L   &kp LALT   &kp RGUI   &kp RSHIFT
 #elif defined(TBLE_MIT)
  &kp LCTRL  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L          &kp SPACE                   &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
 #else
