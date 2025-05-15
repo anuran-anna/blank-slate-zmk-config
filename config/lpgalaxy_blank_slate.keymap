@@ -32,7 +32,8 @@
 #define RG_T(n) &ltap RGUI n
 #define LA_T(n) &ltap LALT n
 #define RA_T(n) &ltap RALT n
-
+#define RC_T(n) &ltap RCTL n
+#define LC_T(n) &ltap LCTL n 
 
 / {
     chosen {
