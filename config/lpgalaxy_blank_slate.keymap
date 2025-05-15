@@ -23,17 +23,17 @@
 #define FUN_L 3
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-&lt { quick_tap_ms = <200>; };
+//&lt { quick_tap_ms = <200>; };
 
 #define BT(n) BT_SEL n
-#define LS_T(n) &ltap LSHIFT n
-#define RS_T(n) &ltap RSHIFT n
-#define LG_T(n) &ltap LGUI n
-#define RG_T(n) &ltap RGUI n
-#define LA_T(n) &ltap LALT n
-#define RA_T(n) &ltap RALT n
-#define RC_T(n) &ltap RCTL n
-#define LC_T(n) &ltap LCTL n 
+#define LS_T(n) &ht LSHIFT n
+#define RS_T(n) &ht RSHIFT n
+#define LG_T(n) &ht LGUI n
+#define RG_T(n) &ht RGUI n
+#define LA_T(n) &ht LALT n
+#define RA_T(n) &ht RALT n
+#define RC_T(n) &ht RCTL n
+#define LC_T(n) &ht LCTL n 
 
 / {
     chosen {
@@ -55,14 +55,14 @@
                 )
     };
     behaviors {
-        ltap: layer_tap_left {
+        ht: holdtap {
           compatible = "zmk,behavior-hold-tap";
           #binding-cells = <2>;
           flavor = "tap-preferred";
           tapping-term-ms = <180>;
-          quick-tap-ms = <140>;
+          quick-tap-ms = <100>;
           require-prior-idle-ms = <65>;
-          bindings = <&mo>, <&kp>;
+          bindings = <&kp>, <&kp>;
         };
     };
     combos {
@@ -84,7 +84,7 @@
         };
       combo_next {
           timeout-ms = <50>;
-          key-positions = <6 30>;
+          k positions = <6 30>;
           bindings = <&kp C_NEXT>;
         };
     };
