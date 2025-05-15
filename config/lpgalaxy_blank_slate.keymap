@@ -53,16 +53,6 @@
                 bindings = <&kp PLUS &kp COLON &kp PLUS &kp N1 &kp COLON &kp RET>;
                 )
     };
-    
-    tap_dances {
-    	layer_tap: layer_tap_0 {
-		compatible = "zmk,behavior-tap-dance";
-		label = "TD_SHIFTY";
-		#binding-cells = <0>;
-		tapping-term-ms = <150>;
-		bindings = <&mo NUM>, <&kp SPACE>;
-	  };
-    };
     behaviors {
         ltap: layer_tap_left {
           compatible = "zmk,behavior-hold-tap";
