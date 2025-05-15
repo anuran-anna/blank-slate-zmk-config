@@ -26,12 +26,12 @@
 &lt { quick_tap_ms = <200>; };
 
 #define BT(n) BT_SEL n
-#define LS_T(n) &mt LSHIFT n
-#define RS_T(n) &mt RSHIFT n
-#define LG_T(n) &mt LGUI n
-#define RG_T(n) &mt RGUI n
-#define LA_T(n) &mt LALT n
-#define RA_T(n) &mt RALT n
+#define LS_T(n) &ltap LSHIFT n
+#define RS_T(n) &ltap RSHIFT n
+#define LG_T(n) &ltap LGUI n
+#define RG_T(n) &ltap RGUI n
+#define LA_T(n) &ltap LALT n
+#define RA_T(n) &ltap RALT n
 
 
 / {
@@ -67,9 +67,10 @@
         ltap: layer_tap_left {
           compatible = "zmk,behavior-hold-tap";
           #binding-cells = <2>;
-          flavor = "balanced";
-          tapping-term-ms = <150>;
-          quick-tap-ms = <0>;
+          flavor = "tap-preferred";
+          tapping-term-ms = <180>;
+          quick-tap-ms = <140>;
+          require-prior-idle-ms = <65>;
           bindings = <&mo>, <&kp>
         };
     };
@@ -119,7 +120,7 @@
  &kp LSHFT  &kp Z      &kp X      &kp C       &kp D          &kp V          &kp K            &kp H          &kp COMMA   &kp DOT    &kp SEMI      &kp RET
 #endif
 #ifdef TBLE_DUAL_2U
- &kp LCTRL  &kp LGUI   &kp LALT   &mo NAV_L         &ltap SFT_L SPACE               &ltap SYM_L BKSP          &mo NUM_L   &kp LALT   &kp RGUI   &kp RSHIFT
+ &kp LCTRL  &kp LGUI   &kp LALT   &mo NAV_L         &lt SFT_L SPACE               &lt SYM_L BKSP          &mo NUM_L   &kp LALT   &kp RGUI   &kp RSHIFT
 #elif defined(TBLE_MIT)
  &kp LCTRL  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L          &kp SPACE                   &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
 #else
