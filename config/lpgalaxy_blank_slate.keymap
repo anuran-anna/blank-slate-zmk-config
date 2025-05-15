@@ -111,7 +111,7 @@
  &kp LSHFT  &kp Z      &kp X      &kp C       &kp D          &kp V          &kp K            &kp H          &kp COMMA   &kp DOT    &kp SEMI      &kp RET
 #endif
 #ifdef TBLE_DUAL_2U
- &kp LCTRL  &kp LGUI   &kp LALT   &mo NAV_L         &lt SFT_L SPACE               &lt SYM_L BKSP          &mo NUM_L   &kp LALT   &kp RGUI   &kp RSHIFT
+ &kp LCTRL  &kp LGUI   &kp LALT   &mo NAV_L         &lt SFT_L SPACE               &lt NUM_L BKSP          &mo FUN_L   &kp LALT   &kp RGUI   &kp RSHIFT
 #elif defined(TBLE_MIT)
  &kp LCTRL  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L          &kp SPACE                   &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
 #else
