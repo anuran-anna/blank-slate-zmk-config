@@ -84,7 +84,7 @@
         };
       combo_next {
           timeout-ms = <50>;
-          k positions = <6 30>;
+          key-positions = <6 30>;
           bindings = <&kp C_NEXT>;
         };
     };
